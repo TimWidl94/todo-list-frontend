@@ -1,0 +1,19 @@
+@import "./../../../styles.scss";
+
+div{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: calc(100% - 5rem);
+  height: 3rem;
+  background-color: #364958;
+  padding-left: 5rem;
+  gap: 1.5rem;
+  >a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+  }
+}
