@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, AllTodosComponent ],
+  imports: [NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -17,11 +17,12 @@ export class HeaderComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {
-    this.authService.isLoggedIn.subscribe(status => {
+  async ngOnInit() {
+    this.authService.isLoggedIn.subscribe((status) => {
       this.isLoggedIn = status;
-    });}
-
+    });
+    await console.log('logged in status', this.isLoggedIn);
+  }
 
   toggleSideBar() {
     if (!this.sideBar) {
@@ -38,4 +39,4 @@ export class HeaderComponent {
       console.error(e);
     }
   }
-  }
+}

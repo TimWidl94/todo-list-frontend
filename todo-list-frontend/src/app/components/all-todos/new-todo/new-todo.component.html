@@ -1,0 +1,27 @@
+<section>
+  <div class="new-todo-box">
+    <form action="" (ngSubmit)="createNewTodo()">
+      <span>Titel</span>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        required
+        placeholder="Title here"
+        class="title-input"
+      />
+      <span>Description</span>
+      <textarea
+        type="text"
+        name="description"
+        [(ngModel)]="description"
+        required
+        placeholder="Description here"
+
+      ></textarea>
+      <div class="card-bottom">
+        <button class="grey-btn">Create new todo</button>
+      </div>
+    </form>
+  </div>
+</section>

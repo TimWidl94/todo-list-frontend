@@ -1,14 +1,32 @@
 <section>
   <div *ngFor="let todo of todos" class="todo-card">
-    <span>
+    <div class="left-card">
+      <span>
+        <span class="headline">Titel: </span>
+        <span class="color-White">{{ todo.title }}</span>
+      </span>
+      <div>
+        <span class="headline">Description:</span>
+        <div name="description" id="description"
+          >{{ todo.description }}
+      </div
+        >
+      </div>
+    </div>
+    <div class="side-bar">
+      <button>
+        <img src="./../../../assets/img/pencil.png" alt="" />
+      </button>
+      <button>
+        <img src="./../../../assets/img/trashcan.png" alt="" />
+      </button>
       <input type="checkbox" [checked]="todo.checked" />
-      <span class="headline">Titel: </span>
-      <span class="color-White">{{ todo.title }}</span>
-    </span>
-    <div>
-      <span class="headline">Description</span>
-      <textarea name="description" id="description">{{ todo.description }}
-      </textarea>
     </div>
   </div>
+  <div class="add-icon-box">
+    <button (click)="openCard()">
+      <img src="./../../../assets/img/addIcon.svg" alt="" />
+    </button>
+  </div>
 </section>
+<app-new-todo *ngIf="openNewCard"></app-new-todo>

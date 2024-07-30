@@ -1,11 +1,10 @@
 @import "./../../../styles.scss";
 
 section {
-  @include dFlex();
+  @include dFlex($g: 1rem);
   margin: 0;
   padding: 1.25rem;
   flex-wrap: wrap;
-  gap: 1rem;
   font-family: $poppinsFont;
   height: 100%;
 }
@@ -13,7 +12,7 @@ section {
 .todo-card {
   @include dFlex($jc: start, $g: 0.5rem, $ai: start);
   border: 1px solid white;
-  flex-direction: column;
+  // flex-direction: column;
   max-width: 22rem;
   width: 100%;
   height: 11rem;
@@ -21,23 +20,32 @@ section {
   padding: 1rem;
   box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.075),
     20px 20px 20px rgba(0, 0, 0, 0.35);
-  &:hover {
-    cursor: pointer;
-  }
+}
+
+.left-card {
+  @include dFlex($jc: start, $g: 0.5rem, $ai: start);
+  flex-direction: column;
+  max-width: 22rem;
+  width: 100%;
+  height: 10rem;
+  padding: 1rem;
   > div {
-    width: 100%;
+    @include dFlex($ai: start);
+    flex-direction: column;
     height: 100%;
-    > textarea {
-      @include dFlex();
+    width: 100%;
+    > div {
+      @include dFlex($ai: start, $jc: start);
       width: 100%;
       height: 100%;
-      max-height: 7.5rem;
-      max-width: 22rem;
+      max-height: 6.5rem;
+      max-width: 19rem;
       background-color: $BgC;
       border: none;
       font-size: 1rem;
       color: white;
       resize: none;
+      overflow-y: auto;
       &:focus {
         outline: none;
         border-color: transparent;
@@ -46,13 +54,16 @@ section {
         scrollbar-width: thin;
       }
       &::-webkit-scrollbar-track {
-        background:  #3d4b55da; /* Hintergrund der Scrollleiste */
+        background: #3d4b55da; /* Hintergrund der Scrollleiste */
         border-radius: 0.25rem;
       }
       &::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #364958, #4b667a); /* Farbe des Scrollbalkens */
+        background: linear-gradient(
+          to bottom,
+          #364958,
+          #4b667a
+        ); /* Farbe des Scrollbalkens */
         border-radius: 10px;
-
       }
       &::-webkit-scrollbar:hover {
         background: #555; /* Farbe des Scrollbalkens beim Hover */
@@ -67,4 +78,43 @@ section {
 
 .headline {
   font-weight: bold;
+}
+
+.add-icon-box {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  @include dFlex();
+  width: 4rem;
+  height: 4rem;
+  border: 50%;
+  > button {
+    @include dFlex();
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    > img:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.side-bar {
+  @include dFlex($jc: space-between);
+  width: 2rem;
+  height: 100%;
+  flex-direction: column;
+  > button {
+    @include dFlex();
+    width: 1.5rem;
+    height: 1.5rem;
+    &:hover{
+      cursor: pointer;
+    }
+    > img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }

@@ -1,0 +1,100 @@
+@import "./../../../../styles.scss";
+
+.new-todo-box {
+  @include dFlex();
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  width: 30rem;
+  height: 40rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.075),
+    20px 20px 20px rgba(0, 0, 0, 0.35);
+  background-color: $BgC;
+  color: white;
+  form {
+    @include dFlex($jc: start, $ai: start);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-bottom {
+  @include dFlex();
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+}
+
+.title-input {
+  @include dFlex();
+  width: 100%;
+  height: 5rem;
+  border-radius: 0.5rem;
+  background-color: $BgC;
+  border: transparent;
+  color: white;
+  font-size: 1.5rem;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.description-input {
+  @include dFlex();
+  width: 100%;
+  height: 20rem;
+  border-radius: 0.5rem;
+  background-color: $BgC;
+  border: transparent;
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 20rem;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+textarea {
+  @include dFlex();
+  width: 100%;
+  height: 100%;
+  background-color: $BgC;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  resize: none;
+  max-height: 28rem;
+  &:focus {
+    outline: none;
+    border-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    scrollbar-width: thin;
+  }
+  &::-webkit-scrollbar-track {
+    background: #3d4b55da; /* Hintergrund der Scrollleiste */
+    border-radius: 0.25rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      #364958,
+      #4b667a
+    ); /* Farbe des Scrollbalkens */
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar:hover {
+    background: #555; /* Farbe des Scrollbalkens beim Hover */
+  }
+}

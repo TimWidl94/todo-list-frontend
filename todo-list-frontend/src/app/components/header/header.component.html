@@ -1,5 +1,5 @@
 <header>
-  <button (click)="toggleSideBar()">
+  <button (click)="toggleSideBar()" *ngIf="isLoggedIn">
     <img src="./../../../assets/img/burger-menu.svg" alt="burger-menu" />
   </button>
   <div *ngIf="!isLoggedIn">
