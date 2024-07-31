@@ -22,15 +22,18 @@ export class NewTodoComponent {
     this.todoService.createTodo(newTodo).subscribe(
       (response) => {
         console.log('Todo created successfully:', response);
-        // Optionally reset the form or show a success message
         this.title = '';
         this.description = '';
         this.checked = false
+        this.closeNewCard();
       },
       (error) => {
         console.error('Error creating todo:', error);
-        // Optionally show an error message
       }
     );
+  }
+
+  closeNewCard(){
+    this.todoService.setOpenNewCard(false);
   }
 }

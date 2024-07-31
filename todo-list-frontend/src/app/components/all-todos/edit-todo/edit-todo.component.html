@@ -1,9 +1,9 @@
 <section>
   <div class="background">
-    <button (click)="closeNewCard()"><img src="./../../../../assets/img/cross.svg" alt="cross" /></button>
+    <button (click)="closeEditCard()"><img src="./../../../../assets/img/cross.svg" alt="cross" /></button>
   </div>
   <div class="new-todo-box">
-    <form action="" (ngSubmit)="createNewTodo()">
+    <form action="" (ngSubmit)="editTodo()">
       <span>Titel</span>
       <input
         type="text"
@@ -22,7 +22,7 @@
         placeholder="Description here"
       ></textarea>
       <div class="card-bottom">
-        <button class="grey-btn">Create new todo</button>
+        <button class="grey-btn">Edit todo</button>
       </div>
     </form>
   </div>

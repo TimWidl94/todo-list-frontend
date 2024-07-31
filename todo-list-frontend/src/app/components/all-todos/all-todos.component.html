@@ -7,20 +7,22 @@
       </span>
       <div>
         <span class="headline">Description:</span>
-        <div name="description" id="description"
-          >{{ todo.description }}
-      </div
-        >
+        <div name="description" id="description">{{ todo.description }}</div>
+      </div>
+      <div>
+        <span class="headline">Complete:</span>
+        <div name="description" id="description">{{ todo.checked }}</div>
       </div>
     </div>
-    <div class="side-bar">
-      <button>
-        <img src="./../../../assets/img/pencil.png" alt="" />
+    <div class="card-btn-box">
+      <button class="card-btn fill-btn-grey" (click)="editCard(todo)">
+        Edit</button
+      ><button class="card-btn fill-btn-green" *ngIf="!todo.checked" (click)="completeTask(todo)">
+        Done
       </button>
-      <button>
-        <img src="./../../../assets/img/trashcan.png" alt="" />
+      <button class="card-btn fill-btn-green" *ngIf="todo.checked" (click)="uncompleteTask(todo)">
+        Not Done
       </button>
-      <input type="checkbox" [checked]="todo.checked" />
     </div>
   </div>
   <div class="add-icon-box">
@@ -30,3 +32,4 @@
   </div>
 </section>
 <app-new-todo *ngIf="openNewCard"></app-new-todo>
+<app-edit-todo *ngIf="editOpen" [todo]="currentTodo"></app-edit-todo>

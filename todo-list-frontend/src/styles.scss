@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 $BgC: #3e5465;
+$CBgC: #819cb1;
 
 /* fonts */
 
@@ -111,5 +112,28 @@ body {
   &:hover {
     cursor: pointer;
     background-position: left bottom;
+  }
+}
+
+.fill-btn-grey {
+  background: linear-gradient(to right, #022f40 50%, $BgC 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.2s ease-out;
+  &:hover {
+    cursor: pointer;
+    background-position: left bottom;
+  }
+}
+
+.fill-btn-green {
+  background: linear-gradient(to right, rgb(10, 226, 21) 50%, $BgC 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.2s ease-out;
+  &:hover {
+    cursor: pointer;
+    background-position: left bottom;
+    color: black;
   }
 }
