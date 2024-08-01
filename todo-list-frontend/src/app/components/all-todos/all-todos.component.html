@@ -1,28 +1,41 @@
 <section>
-  <div *ngFor="let todo of todos" class="todo-card">
-    <div class="left-card">
-      <span>
-        <span class="headline">Titel: </span>
-        <span class="color-White">{{ todo.title }}</span>
-      </span>
-      <div>
-        <span class="headline">Description:</span>
-        <div name="description" id="description">{{ todo.description }}</div>
+  <div *ngFor="let todo of todos" class="todo-card-container">
+    <div class="todo-card">
+      <div class="left-card">
+        <span>
+          <span class="headline">Titel: </span>
+          <span class="color-White">{{ todo.title }}</span>
+        </span>
+        <div>
+          <span class="headline">Description:</span>
+          <div name="description" id="description">{{ todo.description }}</div>
+        </div>
+        <div>
+          <span class="headline">Complete:</span>
+          <div name="description" id="description">{{ todo.checked }}</div>
+        </div>
       </div>
-      <div>
-        <span class="headline">Complete:</span>
-        <div name="description" id="description">{{ todo.checked }}</div>
+      <div class="card-btn-box">
+        <button class="card-btn fill-btn-grey" (click)="editCard(todo)">
+          Edit</button
+        ><button
+          class="card-btn fill-btn-green"
+          *ngIf="!todo.checked"
+          (click)="completeTask(todo)"
+        >
+          Done
+        </button>
+        <button
+          class="card-btn fill-btn-green"
+          *ngIf="todo.checked"
+          (click)="uncompleteTask(todo)"
+        >
+          Not Done
+        </button>
+        <button class="card-btn fill-btn-grey" (click)="deleteCard(todo)">
+          Delete</button
+        >
       </div>
-    </div>
-    <div class="card-btn-box">
-      <button class="card-btn fill-btn-grey" (click)="editCard(todo)">
-        Edit</button
-      ><button class="card-btn fill-btn-green" *ngIf="!todo.checked" (click)="completeTask(todo)">
-        Done
-      </button>
-      <button class="card-btn fill-btn-green" *ngIf="todo.checked" (click)="uncompleteTask(todo)">
-        Not Done
-      </button>
     </div>
   </div>
   <div class="add-icon-box">

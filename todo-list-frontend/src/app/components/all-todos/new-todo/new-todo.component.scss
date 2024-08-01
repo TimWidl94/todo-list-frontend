@@ -20,6 +20,10 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+    }
     > img {
       width: 3rem;
       height: 3rem;

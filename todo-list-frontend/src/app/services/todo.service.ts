@@ -29,6 +29,10 @@ export class TodoService {
     return this.http.put(this.apiUrl + todo.id + '/', todo)
   }
 
+  deleteTodo(todo:any): Observable<any>{
+    return this.http.delete(this.apiUrl + todo + '/', todo)
+  }
+
   private openNewCardSubject = new BehaviorSubject<boolean>(false);
   openNewCard$ = this.openNewCardSubject.asObservable();
 
