@@ -3,9 +3,9 @@
     <img src="./../../../assets/img/burger-menu.svg" alt="burger-menu" />
   </button>
   <div *ngIf="!isLoggedIn">
-  <a href="/login">Login</a>
-  <a href="/regestration">Regestration</a>
-</div>
+    <a href="/login">Login</a>
+    <a href="/regestration">Regestration</a>
+  </div>
 </header>
 
 <div class="side-menu" [class.open]="sideBar">
@@ -16,12 +16,7 @@
     <div class="linkbox">
       <a href="/todos">Tasks</a>
     </div>
-    <div class="linkbox">
-      <a href="">Trash</a>
-    </div>
-    <div class="linkbox">
-      <a href="">Completed Tasks</a>
-    </div>
+
     <div class="linkbox">
       <button (click)="logout(); toggleSideBar()" href="">Logout</button>
     </div>
