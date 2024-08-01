@@ -5,18 +5,18 @@ import { environment } from '../../environments/environment.development';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodoService {
   private apiUrl = environment.baseUrl + 'todos/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  createTodo(todo: { title: string; description: string; }): Observable<any> {
+  createTodo(todo: { title: string; description: string }): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Token ${token}`
+      Authorization: `Token ${token}`,
     });
     return this.http.post<any>(this.apiUrl, todo, { headers });
   }
@@ -25,12 +25,12 @@ export class TodoService {
     return this.http.put(this.apiUrl + todo.id + '/', todo);
   }
 
-  completeTask(todo: any): Observable<any>{
-    return this.http.put(this.apiUrl + todo.id + '/', todo)
+  completeTask(todo: any): Observable<any> {
+    return this.http.put(this.apiUrl + todo.id + '/', todo);
   }
 
-  deleteTodo(todo:any): Observable<any>{
-    return this.http.delete(this.apiUrl + todo + '/', todo)
+  deleteTodo(todo: any): Observable<any> {
+    return this.http.delete(this.apiUrl + todo + '/', todo);
   }
 
   private openNewCardSubject = new BehaviorSubject<boolean>(false);
@@ -40,7 +40,7 @@ export class TodoService {
     this.openNewCardSubject.next(value);
   }
 
-  setEditCard(value: boolean){
+  setEditCard(value: boolean) {
     this.editCardSubject.next(value);
   }
 

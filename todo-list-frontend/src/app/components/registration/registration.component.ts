@@ -26,7 +26,6 @@ export class RegistrationComponent {
       .subscribe(
         (response) => {
           console.log('Registration successful', response);
-          // Hier können Sie den Benutzer weiterleiten oder eine Erfolgsnachricht anzeigen
           this.regestrationComplete = true;
           setTimeout(() => {
             this.router.navigateByUrl('/login');
@@ -34,7 +33,6 @@ export class RegistrationComponent {
         },
         (error) => {
           console.error('Registration failed', error);
-          // Hier können Sie eine Fehlermeldung anzeigen
         }
       );
   }

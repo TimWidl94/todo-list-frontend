@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  public isLoggedIn:boolean = false;
+  public isLoggedIn: boolean = false;
   constructor(private as: AuthService, private router: Router) {}
 
   async login() {
@@ -24,7 +24,7 @@ export class LoginComponent {
         this.password
       );
       console.log(resp);
-      this.isLoggedIn=true;
+      this.isLoggedIn = true;
       localStorage.setItem('token', resp['token']);
       this.router.navigateByUrl('/todos');
     } catch (e) {

@@ -18,7 +18,6 @@ export class EditTodoComponent {
   title: string = '';
   description: string = '';
 
-
   ngOnInit() {
     if (this.todo) {
       this.title = this.todo.title;
@@ -45,6 +44,4 @@ export class EditTodoComponent {
       }
     );
   }
-
-
 }

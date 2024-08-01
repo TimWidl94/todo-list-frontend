@@ -69,7 +69,7 @@ export class AllTodosComponent {
 
   closeEditCard() {
     this.editOpen = false;
-    this.loadTodos(); // Reload todos after editing
+    this.loadTodos();
   }
 
   completeTask(todo: any) {

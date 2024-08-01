@@ -18,7 +18,7 @@ export class AuthService {
 
   private checkToken(): boolean {
     const token = localStorage.getItem('token');
-    return !!token; // returns true if token exists, otherwise false
+    return !!token;
   }
 
   public loginWithUsernameAndPassword(username: string, password: String) {

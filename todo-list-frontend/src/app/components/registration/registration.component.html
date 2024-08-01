@@ -1,14 +1,42 @@
 <section>
-  <a class="return-btn" href="/login"><img src="./../../../assets/img/arrowLeft.png" alt="ArrowLeft"></a>
+  <a class="return-btn" href="/login"
+    ><img src="./../../../assets/img/arrowLeft.png" alt="ArrowLeft"
+  /></a>
   <div class="registration-box" *ngIf="!regestrationComplete">
     <h2>Regestration</h2>
     <form action="" (ngSubmit)="registrate()">
-      <input type="text" name="username" [(ngModel)]="username" required placeholder="Username" />
-      <input type="password" name="password" [(ngModel)]="password" required placeholder="Password" />
-      <input type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" required placeholder="Confirm Password" />
-      <input type="email" name="email" [(ngModel)]="email" required placeholder="Email" />
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Password"
+      />
+      <input
+        type="password"
+        name="passwordConfirm"
+        [(ngModel)]="passwordConfirm"
+        required
+        placeholder="Confirm Password"
+      />
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        placeholder="Email"
+      />
       <button>Regestrate</button>
     </form>
   </div>
-  <div class="regestrationComplete" *ngIf="regestrationComplete">Regestration complete</div>
+  <div class="regestrationComplete" *ngIf="regestrationComplete">
+    Regestration complete
+  </div>
 </section>

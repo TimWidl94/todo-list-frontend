@@ -20,7 +20,7 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    &:hover{
+    &:hover {
       cursor: pointer;
       transform: scale(1.1);
     }
@@ -117,18 +117,14 @@ textarea {
     scrollbar-width: thin;
   }
   &::-webkit-scrollbar-track {
-    background: #3d4b55da; /* Hintergrund der Scrollleiste */
+    background: #3d4b55da;
     border-radius: 0.25rem;
   }
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      to bottom,
-      #364958,
-      #4b667a
-    ); /* Farbe des Scrollbalkens */
+    background: linear-gradient(to bottom, #364958, #4b667a);
     border-radius: 10px;
   }
   &::-webkit-scrollbar:hover {
-    background: #555; /* Farbe des Scrollbalkens beim Hover */
+    background: #555;
   }
 }

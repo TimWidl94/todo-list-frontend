@@ -10,7 +10,7 @@ header {
   padding-left: 2rem;
   gap: 1.5rem;
   > div {
-    @include dFlex($g:1rem);
+    @include dFlex($g: 1rem);
     > a {
       display: flex;
       align-items: center;
